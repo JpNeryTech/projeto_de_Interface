@@ -2,6 +2,7 @@
 h1{
     font-family: 'arial';
     text-align: center;
+    
 }
 h2{
     font-family: 'arial';
@@ -9,25 +10,29 @@ h2{
     h3{
     font-family: 'arial';
     text-align: center;
+
 }
     
 p{
     padding: 25px;
     text-align: justify;
     font-family: arial;
-    font-size: 18px;
+    font-size: 1.6rem;
 
 }
 ol{
     padding: 25px;
     text-align: justify;
     font-family: arial;
-    font-size: 18px;
+    font-size: 1.6rem;
 }
 ul{
     padding: 25px;
     text-align: justify;
     font-family: arial;
-    font-size: 18px;
+    font-size: 1.6rem;
+}
+html{
+    font-size: 62.5%;
 }
 
