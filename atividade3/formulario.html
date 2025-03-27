@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
+    <style type = "text/css">
+        h2{
+            text-align: center;
+        }
+        </style>
+
+</head>
+<body>
+    <!--Formulário-->
+    <h2>Formulário</h2>
+    <form action="arquivo.sql" method="post">
+
+        <p>Nome: <input type="text" name="nome"
+            placeholder="Escreva o seu nome" size="60"/></p>
+
+            <p>Telefone<input type="tel" 
+                placeholder="DDD-00000-0000 " maxlength="11" /></p>
+
+       <p>Data de Nascimento<input type="date" /></p>  
+
+       <p>Digite sua Senha<input type="password" placeholder="Digite a sua senha" maxlength="8" /></p>
+
+       <p>Email<input type="email" placeholder="Digite o seu email" /></p>
+
+       <p>Idade<input type="number" placeholder="Digite a sua idade"  /></p>
+
+       <p> Comentários:
+        <textarea rows="10" cols="5"></textarea>
+
+       </p>
+<!--Estrutura de opções-->
+       
+       <p>Estado de Nascimento:
+    <br>
+    <input type="radio" name="estados" value="DF" />DF 
+    <br>  
+    <input type="radio" name="estados" value="BAHIA" />BAHIA
+    <br>   
+    <input type="radio" name="estados" value="MATO GROSSO" />MATO GROSSO
+    <br>  
+       </p>
+
+       <!--Estrutura de seleção-->
+
+       <p>Países:
+
+        <select> 
+            <option></option>
+            <option value="">Brasil</option>
+            <option value="">Estados Unidos</option>
+            <option value="">Uruguai</option>
+            <option value="">Belgica</option>   
+        </select>
+       </p>
+
+       <!--Estrutura de check Box e Envio-->
+       <p><input type="checkbox">Aceito Fazer parte</p>
+       <p><input type="checkbox">Não aceito</p>
+       <p><input type="checkbox">Talvez</p>
+
+       <input type="reset" name="reset"/>
+       <input type="submit" name="enviar"/>
+                                <br />
+
+    </form>
+    <br><br>
+    
+    <!--fildset-->
+    <fieldset>
+        <legend align="center">Dados Pessoais</legend>
+<label>Nome:<input type="text" name="texto"></label>
+<br><br>
+<label>CPF:<input type="text" name="cpf"></label>
+    </fieldset>
+
+</body>
+</html>
