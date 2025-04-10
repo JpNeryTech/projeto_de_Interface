@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
+    <link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body class="formularioBody">
+    <header class="headerFormulario">
+    <h1>Campo de Seleção</h1>
+    <h3 class="h3Formulario">Para se candidatar à vaga de Desenvolvedor Júnior, preencha as informações:</h3>
+    <br>
+</header>
+    
+    <form action="arquivo.sql" method="post" onsubmit="return validarSenha();">
+
+        <p class="inputFormulario">Nome: <input type="text" name="nome" placeholder="Escreva o seu nome" size="60" /></p>
+
+        <p>Telefone: <input type="tel" name="telefone" placeholder="DDD-00000-0000" maxlength="13" /></p>
+
+        <p>Data de Nascimento: <input type="date" name="dataNascimento" /></p>
+
+        <p>Digite sua Senha: <input type="password" id="senha" name="senha" placeholder="Digite a sua senha" maxlength="8" required /></p>
+
+        <p>Confirmar Senha: <input type="password" id="confirmarSenha" name="confirmarSenha" placeholder="Confirme sua senha" maxlength="8" required /></p>
+
+        <p>Email: <input type="email" name="email" placeholder="Digite o seu email" /></p>
+
+        <p>Idade: <input type="number" name="idade" placeholder="Digite a sua idade" /></p>
+
+        <p>Faça uma breve apresentação:<br>
+        <textarea name="apresentacao" rows="10" cols="50" placeholder="Fale um pouco sobre você"></textarea></p>
+
+        <script>
+            function validarSenha() {
+                let senha = document.getElementById("senha").value;
+                let confirmarSenha = document.getElementById("confirmarSenha").value;
+
+                if (senha !== confirmarSenha) {
+                    alert("ERRO: as senhas não são iguais!");
+                    return false;
+                }
+                return true;
+            }
+        </script>
+
+        <p>Estado de Nascimento:</p>
+        <input type="radio" name="estado" value="DF" /> DF <br>
+        <input type="radio" name="estado" value="BAHIA" /> BAHIA <br>
+        <input type="radio" name="estado" value="MATO GROSSO" /> MATO GROSSO <br>
+
+        <p>País:</p>
+        <select name="pais">
+            <option value="">Selecione</option>
+            <option value="brasil">Brasil</option>
+            <option value="eua">Estados Unidos</option>
+            <option value="uruguai">Uruguai</option>
+            <option value="belgica">Bélgica</option>
+        </select>
+        <br><br><br>
+        <fieldset>
+            <legend>Marque suas Habilidades:</legend>
+            <label><input type="checkbox" name="habilidades" value="HTML" /> HTML</label><br>
+            <label><input type="checkbox" name="habilidades" value="CSS" /> CSS</label><br>
+            <label><input type="checkbox" name="habilidades" value="Java" /> Java</label><br>
+            <label><input type="checkbox" name="habilidades" value="JavaScript" /> JavaScript</label><br>
+            <label><input type="checkbox" name="habilidades" value="Python" /> Python</label><br>
+            <label><input type="checkbox" name="habilidades" value="C#" /> C#</label><br>
+            <label><input type="checkbox" name="habilidades" value="Comunicação" /> Comunicação</label><br>
+            <label><input type="checkbox" name="habilidades" value="Proatividade" /> Proatividade</label><br>
+            <label><input type="checkbox" name="habilidades" value="Inglês" /> Inglês</label><br>
+            <label><input type="checkbox" name="habilidades" value="Espanhol" /> Espanhol</label>
+        </fieldset>
+
+        <br><br>
+        <input type="reset" value="Limpar" />
+        <input type="submit" value="Enviar" />
+
+    </form>
+<br><br>
+    <fieldset>
+        <legend align="center">Dados Pessoais</legend>
+
+        <label for="nome">Nome:</label>
+        <input type="text" name="nome" id="nome"><br><br>
+
+        <label for="nomeMae">Nome da Mãe:</label>
+        <input type="text" name="nomeMae" id="nomeMae"><br><br>
+
+        <label for="nomePai">Nome do Pai:</label>
+        <input type="text" name="nomePai" id="nomePai"><br><br>
+
+        <label for="endereco">Endereço:</label>
+        <textarea name="endereco" id="endereco" rows="4" cols="50" placeholder="Digite o seu endereço completo"></textarea><br><br>
+
+        <label for="cpf">CPF:</label>
+        <input type="text" name="cpf" id="cpf"><br><br>
+
+        <label for="rg">RG:</label>
+        <input type="text" name="rg" id="rg"><br><br>
+
+        <label for="comprovanteResidencia">Comprovante de Residência:</label>
+        <input type="file" name="comprovanteResidencia" id="comprovanteResidencia"><br><br>
+
+        <label for="tituloEleitor">Título de Eleitor:</label>
+        <input type="file" name="tituloEleitor" id="tituloEleitor"><br><br>
+
+        <label for="carteiraTrabalho">Carteira de Trabalho:</label>
+        <input type="file" name="carteiraTrabalho" id="carteiraTrabalho"><br><br>
+
+        <label for="certificadoDispensa">Certificado de Dispensa:</label>
+        <input type="file" name="certificadoDispensa" id="certificadoDispensa"><br><br>
+
+        <label for="comprovanteEscolaridade">Comprovante de Escolaridade:</label>
+        <input type="file" name="comprovanteEscolaridade" id="comprovanteEscolaridade"><br><br>
+
+        <label for="inscricaoPis">Inscrição no PIS/Pasep:</label>
+        <input type="file" name="inscricaoPis" id="inscricaoPis"><br><br>
+
+        <label for="atestadodeSaudeOcupacional">Atestado de Saúde Ocupacional (ASO):</label>
+        <input type="file" name="atestadodeSaudeOcupacional" id="atestadodeSaudeOcupacional"><br><br>
+
+        <label for="foto3x4">Foto 3x4:</label>
+        <input type="file" name="foto3x4" id="foto3x4"><br><br>
+
+        <label for="cnh">Carteira de Motorista (opcional):</label>
+        <input type="file" name="cnh" id="cnh"><br><br>
