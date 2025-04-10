@@ -4,162 +4,130 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulário</title>
-    <link rel="stylesheet" type="text/css" href="style.css"
-
+    <link rel="stylesheet" type="text/css" href="../style.css">
 </head>
-<body>
-    <!--Formulário-->
+<body class="formularioBody">
+    <header class="headerFormulario">
     <h1>Campo de Seleção</h1>
-    <h5>Para se candidatar a vaga de Desenvolvedor-Junior preencha as informações:</h5>
-    <form action="arquivo.sql" method="post">
-
-        <p>Nome: <input type="text" name="nome"
-            placeholder="Escreva o seu nome" size="60"/></p>
-
-            <p>Telefone<input type="tel" 
-                placeholder="DDD-00000-0000 " maxlength="11" /></p>
-
-       <p>Data de Nascimento<input type="date" /></p>  
-                
-       <p>Digite sua Senha:<input type="password" id="senha" placeholder="Digite a sua senha" maxlength="8" required > </p>  
-<!--usei o required para garantir que o usuario vai preencher o campo-->
-
-       <p>Confirmar Senha: <input type="password" id="confirmarSenha" placeholder="Confirme sua Senha" maxlength="8" required > </p>   
-
-       <p>Email<input type="email" placeholder="Digite o seu email" /></p>
-
-       <p>Idade<input type="number" placeholder="Digite a sua idade"  /></p>
-
-       <p> Faça uma breve apresentação:
-        <textarea rows="10" cols="5"></textarea>
-
-       </p>
-<!--Area em que eu vou confirmar se as duas senha que o usuario digitou são iguais-->
-       <script> 
-        function validarSenha() {
-            let senha = document.getElementById("senha").value; //aqui ultilizei o document.getElementById("senha"),
-            // o document representa a pagina, o  .getElementById("senhha") serve para procurar um elemento que tem id="senha" no html, é o value vai pegar
-            //  oque o usuario digitou no campo
-            let confirmarSenha = document.getElementById("confirmarSenha").value;
-
-            if(senha !== confirmarSenha){
-                alert("ERRO: as senhas não são iguais!")
-                return false; //vai impedir o envio do formumlario
-            }
-            return true; //vai permitir o envio
-        }
-       </script>
-
-<!--Estrutura de opções-->
-       
-       <p>Estado de Nascimento:
+    <h3 class="h3Formulario">Para se candidatar à vaga de Desenvolvedor Júnior, preencha as informações:</h3>
     <br>
-    <input type="radio" name="estados" value="DF" />DF 
-    <br>  
-    <input type="radio" name="estados" value="BAHIA" />BAHIA
-    <br>   
-    <input type="radio" name="estados" value="MATO GROSSO" />MATO GROSSO
-    <br>  
-       </p>
+</header>
+    
+    <form action="arquivo.sql" method="post" onsubmit="return validarSenha();">
 
-       <!--Estrutura de seleção-->
+        <p class="inputFormulario">Nome: <input type="text" name="nome" placeholder="Escreva o seu nome" size="60" /></p>
 
-       <p>Países:
+        <p>Telefone: <input type="tel" name="telefone" placeholder="DDD-00000-0000" maxlength="13" /></p>
 
-        <select> 
-            <option></option>
-            <option value="">Brasil</option>
-            <option value="">Estados Unidos</option>
-            <option value="">Uruguai</option>
-            <option value="">Belgica</option>   
+        <p>Data de Nascimento: <input type="date" name="dataNascimento" /></p>
+
+        <p>Digite sua Senha: <input type="password" id="senha" name="senha" placeholder="Digite a sua senha" maxlength="8" required /></p>
+
+        <p>Confirmar Senha: <input type="password" id="confirmarSenha" name="confirmarSenha" placeholder="Confirme sua senha" maxlength="8" required /></p>
+
+        <p>Email: <input type="email" name="email" placeholder="Digite o seu email" /></p>
+
+        <p>Idade: <input type="number" name="idade" placeholder="Digite a sua idade" /></p>
+
+        <p>Faça uma breve apresentação:<br>
+        <textarea name="apresentacao" rows="10" cols="50" placeholder="Fale um pouco sobre você"></textarea></p>
+
+        <script>
+            function validarSenha() {
+                let senha = document.getElementById("senha").value;
+                let confirmarSenha = document.getElementById("confirmarSenha").value;
+
+                if (senha !== confirmarSenha) {
+                    alert("ERRO: as senhas não são iguais!");
+                    return false;
+                }
+                return true;
+            }
+        </script>
+
+        <p>Estado de Nascimento:</p>
+        <div class="radioEstado">
+        <input type="radio" name="estado" value="DF" /> DF <br>
+        <input type="radio" name="estado" value="BAHIA" /> BAHIA <br>
+        <input type="radio" name="estado" value="MATO GROSSO" /> MATO GROSSO <br>
+    </div>
+        
+
+        <p>País:</p>
+        <div class="optionPais">
+        <select name="pais">
+            <option value="">Selecione</option>
+            <option value="brasil">Brasil</option>
+            <option value="eua">Estados Unidos</option>
+            <option value="uruguai">Uruguai</option>
+            <option value="belgica">Bélgica</option>
         </select>
-       </p>
-       <!--Estrutura de check Box e Envio-->
-       <p>Marque com as suas Habilidades:</p>
-       <p><input type="checkbox" name="escolha" />HTML</p>
-       <p><input type="checkbox" name="escolha" />CSS</p>
-       <p><input type="checkbox" name="escolha" />Java</p>
-       <p><input type="checkbox" name="escolha" />Java Script</p>
-       <p><input type="checkbox" name="escolha" />Python</p>
-       <p><input type="checkbox" name="escolha" />C#</p>
-       <p><input type="checkbox" name="escolha" />Comunicação</p>
-       <p><input type="checkbox" name="escolha" />Proatividade</p>
-       <p><input type="checkbox" name="escolha">Inglês</p>
-       <p><input type="checkbox" name="escolha">Espanhol</p>
+    </div>
+        <br><br><br>
+        <fieldset>
+            <legend>Marque suas Habilidades:</legend>
+            <label><input type="checkbox" name="habilidades" value="HTML" /> HTML</label><br>
+            <label><input type="checkbox" name="habilidades" value="CSS" /> CSS</label><br>
+            <label><input type="checkbox" name="habilidades" value="Java" /> Java</label><br>
+            <label><input type="checkbox" name="habilidades" value="JavaScript" /> JavaScript</label><br>
+            <label><input type="checkbox" name="habilidades" value="Python" /> Python</label><br>
+            <label><input type="checkbox" name="habilidades" value="C#" /> C#</label><br>
+            <label><input type="checkbox" name="habilidades" value="Comunicação" /> Comunicação</label><br>
+            <label><input type="checkbox" name="habilidades" value="Proatividade" /> Proatividade</label><br>
+            <label><input type="checkbox" name="habilidades" value="Inglês" /> Inglês</label><br>
+            <label><input type="checkbox" name="habilidades" value="Espanhol" /> Espanhol</label>
+        </fieldset>
 
-       <input type="reset" name="reset"/>
-       <input type="submit" name="enviar"/>
-        <br />
+        <br><br>
+        <input type="reset" value="Limpar" />
+        <input type="submit" value="Enviar" />
 
     </form>
-    <br><br>
-    
-    <!--fildset-->
+<br><br>
     <fieldset>
         <legend align="center">Dados Pessoais</legend>
 
-<label for="nome">Nome:</label>
-<input type="text" name="nome" id="nome">
-<br><br>
+        <label for="nome">Nome:</label>
+        <input type="text" name="nome" id="nome"><br><br>
 
-<label for="nomeMae">Nome da Mãe:</label>
-<input type="text" name="nomeMae" id="nomeMae">
-<br><br>
+        <label for="nomeMae">Nome da Mãe:</label>
+        <input type="text" name="nomeMae" id="nomeMae"><br><br>
 
-<label for="nomePai">Nome do Pai:</label>
-<input type="text" name="NomePai" id="nomePai">
-<br><br>
+        <label for="nomePai">Nome do Pai:</label>
+        <input type="text" name="nomePai" id="nomePai"><br><br>
 
-<label for="endereco">Endereço:</label>
-<textarea name="endereco" id="endereco" rows="4" cols="50" placeholder="Digite o seu endereço completo"></textarea>
-<br><br>
+        <label for="endereco">Endereço:</label>
+        <textarea name="endereco" id="endereco" rows="4" cols="50" placeholder="Digite o seu endereço completo"></textarea><br><br>
 
-<label for="cpf">CPF:</label>
-<input type="text" name="cpf" id="cpf">
-<br><br>
+        <label for="cpf">CPF:</label>
+        <input type="text" name="cpf" id="cpf"><br><br>
 
-<label for="rg">RG:</label>
-<input type="text" name="RG" id="rg">
-<br><br>
+        <label for="rg">RG:</label>
+        <input type="text" name="rg" id="rg"><br><br>
 
-<label for="comprovanteResidencia">Comprovante de Residencia:</label>
-<input type="file" name="comprovanteResidencia" id="comprovanteResidencia">
-<br><br>
+        <label for="comprovanteResidencia">Comprovante de Residência:</label>
+        <input type="file" name="comprovanteResidencia" id="comprovanteResidencia"><br><br>
 
-<label for="tituloEleitor">Titulo de Eleitor:</label>
-<input type="file" name="TituloEleitor" id="tituloEleitor">
-<br><br>
+        <label for="tituloEleitor">Título de Eleitor:</label>
+        <input type="file" name="tituloEleitor" id="tituloEleitor"><br><br>
 
-<label for="carteiraTrabalho">Carteira de Traballho:</label>
-<input type="file" name="CarteiradeTrabalho" id="carteiraTrabalho">
-<br><br>
+        <label for="carteiraTrabalho">Carteira de Trabalho:</label>
+        <input type="file" name="carteiraTrabalho" id="carteiraTrabalho"><br><br>
 
-<label for="cerificadoDispensa">Certificado de Dispensa:</label>
-<input type="file" name="certificadoDispensa" id="cerificadoDispensa">
-<br><br>
+        <label for="certificadoDispensa">Certificado de Dispensa:</label>
+        <input type="file" name="certificadoDispensa" id="certificadoDispensa"><br><br>
 
-<label for="comprovanteEscolaridade">Comprovante de Escolaridde:</label>
-<input type="file" name="comprovanteEscolaridade" id="comprovanteEscolaridade">
-<br><br>
+        <label for="comprovanteEscolaridade">Comprovante de Escolaridade:</label>
+        <input type="file" name="comprovanteEscolaridade" id="comprovanteEscolaridade"><br><br>
 
-<label for="inscricaonoPISPasep">Inscrição no PIS/Pasep:</label>
-<input type="file" name="inscricaoPis" id="inscricaoPis">
-<br><br>
+        <label for="inscricaoPis">Inscrição no PIS/Pasep:</label>
+        <input type="file" name="inscricaoPis" id="inscricaoPis"><br><br>
 
-<label for="atestadodeSaudeOcupacional">Atestado de Saúde Ocupacional (ASO):</label>
-<input type="file" name="atestadodeSaudeOcupacional" id="atestadodeSaudeOcupacional">
-<br><br>
+        <label for="atestadodeSaudeOcupacional">Atestado de Saúde Ocupacional (ASO):</label>
+        <input type="file" name="atestadodeSaudeOcupacional" id="atestadodeSaudeOcupacional"><br><br>
 
-<label for="foto3x4">Foto 3x4:</label>
-<input type="file" name="foto3x4" id="foto3x4">
-<br><br>
+        <label for="foto3x4">Foto 3x4:</label>
+        <input type="file" name="foto3x4" id="foto3x4"><br><br>
 
-<label for="cnh">Carteira de Motorista(opcional):</label>
-<input type="file" name="cnh" id="cnh">
-<br><br>
-
-
-</fieldset>
-
-</body>
-</html>
+        <label for="cnh">Carteira de Motorista (opcional):</label>
+        <input type="file" name="cnh" id="cnh"><br><br>
