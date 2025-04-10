@@ -86,6 +86,7 @@ input[type="reset"] {
     cursor: pointer; /*cursor de mão*/
     font-size: 1rem;
     transition: background-color 0.3s ease;
+    margin-left: 1rem;
     
 }
 input[type="reset"]{
@@ -102,4 +103,10 @@ input[type="submit"]{
     box-shadow: 3px 3px 1px;
     position: relative;
    display: block;
+}
+.radioEstado{
+    padding-left: 0.6%;
+}
+.optionPais{
+    padding-left: 1%;
 }
