@@ -2,6 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Special+Gothic+Expanded+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Special+Gothic+Condensed+One&display=swap');  
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Karla:ital,wght@0,200..800;1,200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 body{
     padding-bottom: 100px; /* Espaço para o rodapé */
 }
@@ -183,3 +185,127 @@ input[type="submit"]{
 .icones-rodape a img:hover {
     transform: scale(1.2); /* Efeito de zoom ao passar o mouse */
 }
+.containerVaga{
+    margin: 25px auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    background-color: rgb(95,158,160);
+    width: 90%;
+    box-shadow: 2px 2px 8px;
+    border-radius: 8px;
+
+}
+.h1Vaga{
+    text-align: center;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 2.5rem;
+}
+.h2Vaga{
+    text-align: left;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 1.8rem;
+}
+.bodyVaga{
+    background-color: rgb(112,128,144);
+}
+.imagensVaga{
+    background-color: rgb(95,158,160);
+    display: flex;
+    flex-wrap: wrap; /* ELE SERVE PARA SE AS IMAGENS NÃO COUBERAM NA MESMA LINHA ELA QUEBRA E VAI PARA A LINHA DE BAIXO*/
+    justify-content: center;
+    gap: 15px;
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 15px 20px;
+    box-shadow: 2px 2px 8px;
+    border-radius: 8px;
+}
+.imagensVaga img{
+    width: 48%; /*tamanho da imagem esta bem menor porque precisa caber as duas no container*/
+    height: auto;
+    border-radius:3px;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.25);
+}
+/* Fiz um media query que é uma forma de dizer para o pc que “Aplique este estilo somente quando a tela tiver um certo tamanho”.*/
+    @media (max-width: 600px) { /*aqui eu estou falando quando uma tela tiver 600px (CELULAR)*/ 
+    .imagensVaga img { /*a imagem */
+    max-width: 100%; /* vai ocupar 100px da tela. assim vai ter um responsividade top*/
+    }
+}
+.bodyDuvidas{
+    background-color: rgb(72,61,139);   
+}
+.containerDuvidas{
+    margin: 25px auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    background-color: rgb(255, 255, 255);
+    width: 90%;
+    box-shadow: 2px 2px 8px;
+    border-radius: 8px;
+}
+.pDuvidas{
+    text-align: left;
+    font-family: arial;
+    font-size: 1.6rem;
+    padding-left: 1%;
+  
+}
+li{
+    text-align: left;
+    font-family: arial;
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+ul {
+    list-style-position: inside;
+    padding-left: 1rem;
+}
+.imagensDuvidas{
+    background-color: rgb(95,158,160);
+    flex-wrap: wrap;
+    display: flex;
+    gap: 15px;
+    text-align: center;
+    justify-content: center;
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 15px 20px;
+    box-shadow: 2px 2px 8px;
+    border-radius: 8px;
+}
+.imagensDuvidas img{
+    width: 48%; 
+    height: auto;
+    border-radius:3px;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.25);
+}
+@media(max-width: 600px){
+    .imagensDuvidas2 img{
+        max-width: 100%;
+    }
+}
+.bodyAgradecimentos{
+    background-color: rgb(218,112,214);   
+}
+.containerAgradecimentos{
+    margin: 25px auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    background-color: rgb(255, 255, 255);
+    width: 90%;
+    box-shadow: 2px 2px 8px;
+    border-radius: 8px;
+}
+
