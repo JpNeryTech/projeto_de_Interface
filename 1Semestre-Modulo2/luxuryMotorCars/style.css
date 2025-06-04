@@ -97,7 +97,8 @@ h1 {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
 }
 
-.bullet-text::before { /* Isso é a bolinha que fica antes do texto, para parecer uma lista*/
+.bullet-text::before {
+  /* Isso é a bolinha que fica antes do texto, para parecer uma lista*/
   content: "•";
   margin-right: 0.5rem;
   color: #ffffff;
@@ -114,9 +115,59 @@ h1 {
   object-position: top;
 }
 
-.servicos{
+.servicos {
   background-color: rgba(75, 30, 47, 1);
 }
 
+.contato {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  /* permitir rolagem vertical */
+  background-color: rgba(26, 31, 54, 1);
+}
 
+.formulario-font {
+  font-family: "Roboto Condensed";
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+}
 
+.formulario-placeholder {
+  font-family: "Roboto Condensed";
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.cor-botao {
+  background-color: rgba(15, 61, 62, 1);
+  font-family: "Roboto Condensed";
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  color: #ffffff;
+}
+
+.cor-botao:hover{
+  background-color: rgb(0, 43, 44);
+  color: #ffffff;
+}
+
+.carros-Novos {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-color: rgba(18, 18, 18, 1);
+}
+
+.card-img-top {
+  height: 200px; 
+  object-fit: cover;
+}
+
+.footer-carros{
+  background-color: rgba(26, 31, 54, 1)
+}
